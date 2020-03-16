@@ -1,8 +1,10 @@
 const express = require('express');
-const dotenv = require('dotenv').config();
+const dotenv = require('dotenv').config()
+const bodyParser = require('body-parser');
 const app = express();
 
 app.set('view engine', 'pug');
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.get('/', function(req, res) {
@@ -10,6 +12,7 @@ app.get('/', function(req, res) {
 });
 
 app.post('/party', function(req, res) {
+    console.log(req.body);
     res.send('Bien rempli !');
 });
 
