@@ -20,7 +20,16 @@ app.post('/party', function(req, res) {
 });
 
 app.get('/party/:id', (req, res) => {
-    res.render('party', { title: 'La page événement' });
+    console.log(req.params.id);
+    axios
+        .get(`${process.env.API_URL}/party/${req.params.id}`)
+        .then(({ data }) =>
+            res.render('party', {
+                party: data,
+                title: data.name
+            }),
+        )
+        .catch((err) => console.log(err));
 });
 
 app.listen(process.env.PORT, () => console.log(`Front app listening on port ${process.env.PORT}!`));
