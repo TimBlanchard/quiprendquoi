@@ -9,4 +9,8 @@ app.get('/', function(req, res) {
     res.render('index', { title: 'Mon title' });
 });
 
+app.post('/party', function(req, res) {
+    res.send('Bien rempli !');
+});
+
 app.listen(process.env.PORT, () => console.log(`Front app listening on port ${process.env.PORT}!`));
