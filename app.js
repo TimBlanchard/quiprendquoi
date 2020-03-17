@@ -20,7 +20,6 @@ app.post('/party', function(req, res) {
 });
 
 app.get('/party/:id', (req, res) => {
-    console.log(req.params.id);
     axios
         .get(`${process.env.API_URL}/party/${req.params.id}`)
         .then(({ data }) =>
