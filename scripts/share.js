@@ -13,6 +13,7 @@ if(navigator.share){
 }
 
 function shareEvent($shareEl) {
+
     navigator.share({
             title: $shareEl.getAttribute('data-share-title'),
             text: $shareEl.getAttribute('data-share-text'),

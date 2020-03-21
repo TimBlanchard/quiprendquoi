@@ -10,7 +10,7 @@ if (navigator.clipboard) {
         );
     });
 } else {
-    console.warn("Pas de support")
+    console.warn("Pas de clipboard")
 }
 
 function copyToClipboard($clipboardEl, $button) {

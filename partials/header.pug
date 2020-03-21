@@ -10,8 +10,7 @@ html(lang="fr")
       if (navigator.serviceWorker) {
         navigator.serviceWorker.register("/sw.js")
                 .then(() => console.log('Service worker is registered'))
-          .catch(err => console.warn(err));
-
+                .catch(err => console.warn(err));
       } else {
-        console.log('Nothing to see here...');
+        console.warn('No service Worker');
       }
