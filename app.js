@@ -43,4 +43,13 @@ app.post('/party/:id/items', function(req, res) {
 });
 
 
+//Suppression d'un item
+app.post('/party/:party_id/items/:item_id/delete', (req, res) => {
+    axios
+        .delete(`${process.env.API_URL}/party/${req.params.party_id}/items/${req.params.item_id}`, req.body)
+        .then(() => res.redirect(`/party/${req.params.party_id}`))
+        .catch((err) => res.send(err));
+});
+
+
 app.listen(process.env.PORT, () => console.log(`Front app listening on port ${process.env.PORT}!`));

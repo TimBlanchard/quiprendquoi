@@ -14,11 +14,9 @@ _Pour chaque amélioration, un message type "message de commit" et si pertinent 
 
 _Quelques exemples (voir le TP)_
 
+- Ajout d'un Item (`app.js`, `party.pug`)
 - Affichage de la liste des items sur la page événément (`app.js`, `party.pug`)
 - Possibilité de supprimer un item (`app.js`, `party.pug`)
-- Rafraîchissement automatique des items avec _fetch_ (`party.js`)
-- Utilisation du localStorage pour stocker le nom de l'utilisateur (`user.js`)
-- Meilleure présentation visuelle des items (`party.scss`)
 
 ## Article personnel
 
