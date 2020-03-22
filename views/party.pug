@@ -6,3 +6,17 @@ h2= party.name
 h3 Créé par #{party.author}
 label(for="url") Partagez l'événement
 input(id="url" value=`${url}` data-clipboard=`${url}` data-share-url=`${url}` data-share-title=`${party.name}` data-share-text=`${party.author} vous invite à rejoindre l'événement ${party.name}`)
+
+each item in party.items
+        span #{item.user}
+        span #{item.name}
+
+
+
+form(method="post" action=`${url}/items`).newItem
+        div.newItem__fields
+                label(for="name") Que prenez-vous ?
+                input(name="name" id="name" required minlength="3" placeholder="des chips")
+                label(for="user" required) Votre pseudo
+                input(name="user" id="user" required minlength="3" placeholder="John")
+        button(type="submit") Ajouter
