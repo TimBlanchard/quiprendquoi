@@ -1,11 +1,9 @@
-const name = 'tim';
-console.log(`Hello ${name}`)
+
 addEventListener('install', (event) => {
-    console.log('Hello from the service worker');
     event.waitUntil(
         caches.open('offline').then((cache) => {
             cache.add('offline.html');
-        })
+        }),
     );
 });
 addEventListener('fetch', (event) => {
@@ -27,11 +25,11 @@ addEventListener('fetch', (event) => {
                     if (isPartyPage(event.request.url)) {
                         return caches
                             .match(event.request)
-                            .catch((err) => caches.match('offline.html'));
+                            .catch(() => caches.match('offline.html'));
                     } else {
                         return caches.match('offline.html');
                     }
-                })
+                }),
         );
     }
 });
