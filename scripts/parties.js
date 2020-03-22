@@ -1,4 +1,4 @@
 if (typeof party !== 'undefined') {
-    console.log(party);
+    console.log('pas undefined');
     localStorage.setItem(location.href, party.name);
 }

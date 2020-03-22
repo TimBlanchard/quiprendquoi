@@ -9,20 +9,21 @@
 <body>
 <h1>Oops !</h1>
 <h2>Vous êtes hors ligne</h2>
+<h2>Liste des events en cache : </h2>
+<ul id="events-storage"></ul>
 <script>
     caches.open('parties').then((cache) =>
         cache.keys().then((keys) =>
             keys.forEach((key) => {
                 const name = localStorage.getItem(key.url);
-
                 if (name) {
                     const $link = document.createElement('a');
                     $link.href = key.url;
                     $link.innerHTML = name;
-                    document.body.appendChild($link);
+                    document.getElementById('events-storage').appendChild($link);
                 }
-            }),
-        ),
+            })
+        )
     );
 </script>
 </body>
